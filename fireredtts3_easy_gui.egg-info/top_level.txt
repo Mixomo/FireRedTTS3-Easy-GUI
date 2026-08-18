@@ -1,0 +1,2 @@
+fireredtts3_local
+fireredtts3_upstream

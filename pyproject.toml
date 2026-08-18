@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools==78.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fireredtts3-easy-gui"
+version = "0.1.1"
+description = "Local Windows Easy GUI for FireRedTTS3 Base and Instruct."
+requires-python = "==3.12.*"
+dependencies = [
+    "einops==0.8.2",
+    "fasttext-wheel==0.9.2; platform_system == 'Windows'",
+    "faster-whisper==1.2.1",
+    "gradio==6.24.0",
+    "huggingface-hub==1.27.0",
+    "hf-xet==1.6.0",
+    "numpy==2.2.6",
+    "peft==0.19.1",
+    "python-dotenv==1.2.2",
+    "regex==2026.7.19",
+    "soundfile==0.14.0",
+    "torch==2.8.0",
+    "torchaudio==2.8.0",
+    "torchcodec==0.7.0",
+    "tensorboard==2.20.0",
+    "setuptools==78.1.0",
+    "transformers==5.6.2",
+    "wetext==0.1.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["fireredtts3_local*", "fireredtts3_upstream*"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cuda", marker = "sys_platform == 'win32'" }]
+torchaudio = [{ index = "pytorch-cuda", marker = "sys_platform == 'win32'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

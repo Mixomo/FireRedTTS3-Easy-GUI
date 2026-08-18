@@ -1,0 +1,11 @@
+.venv/
+.runtime/
+models/
+outputs/
+voices/
+config/
+__pycache__/
+*.pyc
+.env
+training/
+samples/
